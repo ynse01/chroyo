@@ -1,0 +1,27 @@
+<layout id="WatchFace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
+    <label id="TimeLabel" x="center" y="50" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+    <drawable id="MainTicks" class="TriangleTicks">
+		<param name="color">Gfx.COLOR_GREEN</param>
+	</drawable>
+    <drawable id="Seconds" class="RectangularHand">
+		<param name="color">Gfx.COLOR_RED</param>
+        <param name="length">50</param>
+	</drawable>
+    <drawable id="Minute" class="RectangularHand">
+		<param name="color">Gfx.COLOR_YELLOW</param>
+        <param name="length">100</param>
+	</drawable>
+    <drawable id="Hour" class="RectangularHand">
+		<param name="color">Gfx.COLOR_WHITE</param>
+        <param name="length">70</param>
+	</drawable>
+    <drawable id="HeartRate" class="HeartRateWidget">
+		<param name="foreColor">Gfx.COLOR_RED</param>
+        <param name="backColor">Gfx.COLOR_ORANGE</param>
+        <param name="textColor">Gfx.COLOR_WHITE</param>
+        <param name="locX">220</param>
+        <param name="locY">350</param>
+        <param name="radius">70</param>
+	</drawable>
+    <!--<label id="HeartLabel" x="center" y="350" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />-->
+</layout>
