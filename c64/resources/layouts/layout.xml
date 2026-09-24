@@ -1,0 +1,59 @@
+<layout 
+    id="WatchFace"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd"
+    foreground="Gfx.COLOR_BLUE"
+    background="Gfx.COLOR_DK_BLUE">
+    <drawable id="Background" class="StaticBackground">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="HourDigit1" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="HourDigit2" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="HourSeperator" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="MinuteDigit1" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="MinuteDigit2" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="HeartDigit1" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="HeartDigit2" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="HeartDigit3" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="HeartIcon" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="TemperatureDigit1" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="TemperatureDigit2" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+    <drawable id="TemperatureIcon" class="FixedWidthChar">
+		<param name="foreColor">Gfx.COLOR_BLUE</param>
+        <param name="backColor">Gfx.COLOR_DK_BLUE</param>
+	</drawable>
+</layout>
