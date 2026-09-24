@@ -23,5 +23,10 @@
         <param name="locY">350</param>
         <param name="radius">70</param>
 	</drawable>
+    <drawable id="SecondsSegment" class="Segment7">
+		<param name="foreColor">Gfx.COLOR_RED</param>
+        <param name="backColor">Gfx.COLOR_DK_GRAY</param>
+        <param name="thickness">10</param>
+	</drawable>
     <!--<label id="HeartLabel" x="center" y="350" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />-->
 </layout>
