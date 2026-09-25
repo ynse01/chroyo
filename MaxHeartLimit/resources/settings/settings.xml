@@ -1,0 +1,5 @@
+<settings>
+  <setting propertyKey="$Properties.limit" title="$Strings.limit_title" prompt="$Strings.limit_prompt">
+    <settingConfig type="numeric" min="10" max="300" errorMessage="$Strings.limit_error"/>
+  </setting>
+</settings>

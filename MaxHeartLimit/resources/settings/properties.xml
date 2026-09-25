@@ -1,0 +1,3 @@
+<properties>
+  <property id="limit" type="number">160</property>
+</properties>

@@ -1,8 +1,12 @@
 <strings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://developer.garmin.com/downloads/connect-iq/resources.xsd">
     <string id="AppName">MaxHeartLimit</string>
 
-    <string id="prompt">Click the menu button</string>
+    <string id="prompt">Max heart rate set to:</string>
 
-    <string id="menu_label_1">Item 1</string>
-    <string id="menu_label_2">Item 2</string>
+    <string id="limit_title">Maximum heart rate limit</string>
+    <string id="limit_prompt">The threshold heart rate value above which the alarm will be raised</string>
+    <string id="limit_error">Please enter a realistic heart rate value</string>
+
+    <string id="alarm_title">Heart rate limit</string>
+    <string id="alarm_body">Maximum heart rate limit has been reached</string>
 </strings>
