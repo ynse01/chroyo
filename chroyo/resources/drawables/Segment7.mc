@@ -26,87 +26,114 @@ class Segment7 extends Ui.Drawable {
 
     function draw(dc as Gfx.Dc) as Void {
         dc.setColor(_foreColor, _backColor);
-        if (onA()) {
-            var pointsA = [
-                [locX + _thickness / 2d, locY + _thickness / 2d],
-                [locX + _thickness, locY],
-                [locX + width - _thickness, locY],
-                [locX + width - _thickness / 2d, locY + _thickness / 2],
-                [locX + width - _thickness, locY + _thickness],
-                [locX + _thickness, locY + _thickness]
-            ];
-            dc.fillPolygon(pointsA);
+        if (isOnA()) {
+            drawA(dc);
         }
-        if (onB()) {
-            var pointsB = [
-                [locX + width - _thickness / 2d, locY + _thickness / 2d],
-                [locX + width, locY + _thickness],
-                [locX + width, locY + (height - _thickness) / 2d],
-                [locX + width - _thickness / 2d, locY + height / 2d],
-                [locX + width - _thickness, locY + (height - _thickness) / 2d],
-                [locX + width - _thickness, locY + _thickness]
-            ];
-            dc.fillPolygon(pointsB);
+        if (isOnB()) {
+            drawB(dc);
         }
-        if (onC()) {
-            var pointsC = [
-                [locX + width - _thickness / 2d, locY + height / 2d],
-                [locX + width, locY + (height + _thickness) / 2d],
-                [locX + width, locY + height - _thickness / 2d],
-                [locX + width - _thickness / 2d, locY + height],
-                [locX + width - _thickness, locY + height - _thickness / 2d],
-                [locX + width - _thickness, locY + (height + _thickness) / 2d]
-            ];
-            dc.fillPolygon(pointsC);
+        if (isOnC()) {
+            drawC(dc);
         }
-        if (onD()) {
-            var pointsD = [
-                [locX + _thickness / 2d, locY + height],
-                [locX + _thickness, locY + height - _thickness / 2d],
-                [locX + width - _thickness, locY + height - _thickness / 2d],
-                [locX + width - _thickness / 2d, locY + height],
-                [locX + width - _thickness, locY + height + _thickness / 2d],
-                [locX + _thickness, locY + height + _thickness / 2d]
-            ];
-            dc.fillPolygon(pointsD);
+        if (isOnD()) {
+            drawD(dc);
         }
-        if (onE()) {
-            var pointsE = [
-                [locX + _thickness / 2d, locY + height / 2d],
-                [locX + _thickness, locY + (height + _thickness) / 2d],
-                [locX + _thickness, locY + height - _thickness / 2d],
-                [locX + _thickness / 2d, locY + height],
-                [locX, locY + height - _thickness / 2d],
-                [locX, locY + (height + _thickness) / 2d]
-            ];
-            dc.fillPolygon(pointsE);
+        if (isOnE()) {
+            drawE(dc);
         }
-        if (onF()) {
-            var pointsF = [
-                [locX + _thickness / 2d, locY + _thickness / 2d],
-                [locX + _thickness, locY + _thickness],
-                [locX + _thickness , locY + (height - _thickness) / 2d],
-                [locX + _thickness / 2d, locY + height / 2d],
-                [locX, locY + (height - _thickness) / 2d],
-                [locX, locY + _thickness]
-            ];
-            dc.fillPolygon(pointsF);
-            //dc.fillRectangle(locX, locY, _thickness, height / 2d);
+        if (isOnF()) {
+            drawF(dc);
         }
-        if (onG()) {
-            var pointsG = [
-                [locX + _thickness / 2d, locY + height / 2d],
-                [locX + _thickness, locY + (height - _thickness) / 2d],
-                [locX + width - _thickness, locY + (height - _thickness) / 2d],
-                [locX + width - _thickness / 2d, locY + height / 2d],
-                [locX + width - _thickness, locY + (height + _thickness) / 2d],
-                [locX + _thickness, locY + (height + _thickness) / 2d]
-            ];
-            dc.fillPolygon(pointsG);
+        if (isOnG()) {
+            drawG(dc);
         }
     }
 
-    function onA() as Lang.Boolean {
+    function drawA(dc as Gfx.Dc) {
+        var points = [
+            [locX + _thickness / 2d, locY + _thickness / 2d],
+            [locX + _thickness, locY],
+            [locX + width - _thickness, locY],
+            [locX + width - _thickness / 2d, locY + _thickness / 2],
+            [locX + width - _thickness, locY + _thickness],
+            [locX + _thickness, locY + _thickness]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function drawB(dc as Gfx.Dc) {
+        var points = [
+            [locX + width - _thickness / 2d, locY + _thickness / 2d],
+            [locX + width, locY + _thickness],
+            [locX + width, locY + (height - _thickness) / 2d],
+            [locX + width - _thickness / 2d, locY + height / 2d],
+            [locX + width - _thickness, locY + (height - _thickness) / 2d],
+            [locX + width - _thickness, locY + _thickness]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function drawC(dc as Gfx.Dc) {
+        var points = [
+            [locX + width - _thickness / 2d, locY + height / 2d],
+            [locX + width, locY + (height + _thickness) / 2d],
+            [locX + width, locY + height - _thickness / 2d],
+            [locX + width - _thickness / 2d, locY + height],
+            [locX + width - _thickness, locY + height - _thickness / 2d],
+            [locX + width - _thickness, locY + (height + _thickness) / 2d]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function drawD(dc as Gfx.Dc) {
+        var points = [
+            [locX + _thickness / 2d, locY + height],
+            [locX + _thickness, locY + height - _thickness / 2d],
+            [locX + width - _thickness, locY + height - _thickness / 2d],
+            [locX + width - _thickness / 2d, locY + height],
+            [locX + width - _thickness, locY + height + _thickness / 2d],
+            [locX + _thickness, locY + height + _thickness / 2d]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function drawE(dc as Gfx.Dc) {
+        var points = [
+            [locX + _thickness / 2d, locY + height / 2d],
+            [locX + _thickness, locY + (height + _thickness) / 2d],
+            [locX + _thickness, locY + height - _thickness / 2d],
+            [locX + _thickness / 2d, locY + height],
+            [locX, locY + height - _thickness / 2d],
+            [locX, locY + (height + _thickness) / 2d]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function drawF(dc as Gfx.Dc) {
+        var points = [
+            [locX + _thickness / 2d, locY + _thickness / 2d],
+            [locX + _thickness, locY + _thickness],
+            [locX + _thickness , locY + (height - _thickness) / 2d],
+            [locX + _thickness / 2d, locY + height / 2d],
+            [locX, locY + (height - _thickness) / 2d],
+            [locX, locY + _thickness]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function drawG(dc as Gfx.Dc) {
+        var points = [
+            [locX + _thickness / 2d, locY + height / 2d],
+            [locX + _thickness, locY + (height - _thickness) / 2d],
+            [locX + width - _thickness, locY + (height - _thickness) / 2d],
+            [locX + width - _thickness / 2d, locY + height / 2d],
+            [locX + width - _thickness, locY + (height + _thickness) / 2d],
+            [locX + _thickness, locY + (height + _thickness) / 2d]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function isOnA() as Lang.Boolean {
         switch (_number) {
             case 1:
             case 4:
@@ -116,7 +143,7 @@ class Segment7 extends Ui.Drawable {
         }
     }
 
-    function onB() as Lang.Boolean {
+    function isOnB() as Lang.Boolean {
         switch (_number) {
             case 5:
             case 6:
@@ -126,7 +153,7 @@ class Segment7 extends Ui.Drawable {
         }
     }
 
-    function onC() as Lang.Boolean {
+    function isOnC() as Lang.Boolean {
         switch (_number) {
             case 2:
                 return false;
@@ -135,7 +162,7 @@ class Segment7 extends Ui.Drawable {
         }
     }
 
-    function onD() as Lang.Boolean {
+    function isOnD() as Lang.Boolean {
         switch (_number) {
             case 1:
             case 4:
@@ -146,21 +173,19 @@ class Segment7 extends Ui.Drawable {
         }
     }
 
-    function onE() as Lang.Boolean {
+    function isOnE() as Lang.Boolean {
         switch (_number) {
-            case 1:
-            case 3:
-            case 4:
-            case 5:
-            case 7:
-            case 9:
-                return false;
-            default:
+            case 2:
+            case 6:
+            case 8:
+            case 0:
                 return true;
+            default:
+                return false;
         }
     }
 
-    function onF() as Lang.Boolean {
+    function isOnF() as Lang.Boolean {
         switch (_number) {
             case 1:
             case 2:
@@ -172,7 +197,7 @@ class Segment7 extends Ui.Drawable {
         }
     }
 
-    function onG() as Lang.Boolean {
+    function isOnG() as Lang.Boolean {
         switch (_number) {
             case 1:
             case 7:
