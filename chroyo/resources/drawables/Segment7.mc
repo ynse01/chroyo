@@ -103,85 +103,79 @@ class Segment7 extends Ui.Drawable {
     }
 
     function drawA(dc as Gfx.Dc) {
-        var points = [
-            [locX + _thickness / 2d, locY + _thickness / 2d],
-            [locX + _thickness, locY],
-            [locX + width - _thickness, locY],
-            [locX + width - _thickness / 2d, locY + _thickness / 2],
-            [locX + width - _thickness, locY + _thickness],
-            [locX + _thickness, locY + _thickness]
-        ];
-        dc.fillPolygon(points);
+        var middle = locY + _thickness / 2d;
+        drawHorizontal(dc, middle);
     }
 
     function drawB(dc as Gfx.Dc) {
-        var points = [
-            [locX + width - _thickness / 2d, locY + _thickness / 2d],
-            [locX + width, locY + _thickness],
-            [locX + width, locY + (height - _thickness) / 2d],
-            [locX + width - _thickness / 2d, locY + height / 2d],
-            [locX + width - _thickness, locY + (height - _thickness) / 2d],
-            [locX + width - _thickness, locY + _thickness]
-        ];
-        dc.fillPolygon(points);
+        var middle = locX + width - _thickness / 2d;
+        drawVerticalTop(dc, middle);
     }
 
     function drawC(dc as Gfx.Dc) {
-        var points = [
-            [locX + width - _thickness / 2d, locY + height / 2d],
-            [locX + width, locY + (height + _thickness) / 2d],
-            [locX + width, locY + height - _thickness / 2d],
-            [locX + width - _thickness / 2d, locY + height],
-            [locX + width - _thickness, locY + height - _thickness / 2d],
-            [locX + width - _thickness, locY + (height + _thickness) / 2d]
-        ];
-        dc.fillPolygon(points);
+        var middle = locX + width - _thickness / 2d;
+        drawVerticalBottom(dc, middle);
     }
 
     function drawD(dc as Gfx.Dc) {
-        var points = [
-            [locX + _thickness / 2d, locY + height],
-            [locX + _thickness, locY + height - _thickness / 2d],
-            [locX + width - _thickness, locY + height - _thickness / 2d],
-            [locX + width - _thickness / 2d, locY + height],
-            [locX + width - _thickness, locY + height + _thickness / 2d],
-            [locX + _thickness, locY + height + _thickness / 2d]
-        ];
-        dc.fillPolygon(points);
+        var middle = locY + height - _thickness / 2d;
+        drawHorizontal(dc, middle);
     }
 
     function drawE(dc as Gfx.Dc) {
-        var points = [
-            [locX + _thickness / 2d, locY + height / 2d],
-            [locX + _thickness, locY + (height + _thickness) / 2d],
-            [locX + _thickness, locY + height - _thickness / 2d],
-            [locX + _thickness / 2d, locY + height],
-            [locX, locY + height - _thickness / 2d],
-            [locX, locY + (height + _thickness) / 2d]
-        ];
-        dc.fillPolygon(points);
+        var middle = locX + _thickness / 2d;
+        drawVerticalBottom(dc, middle);
     }
 
     function drawF(dc as Gfx.Dc) {
+        var middle = locX + _thickness / 2d;
+        drawVerticalTop(dc, middle);
+    }
+
+    function drawG(dc as Gfx.Dc) {
+        var middle = locY + height / 2d;
+        drawHorizontal(dc, middle);
+    }
+
+    function drawHorizontal(dc as Gfx.Dc, middle as Lang.Double) {
+        var halfThick = _thickness / 2d;
         var points = [
-            [locX + _thickness / 2d, locY + _thickness / 2d],
-            [locX + _thickness, locY + _thickness],
-            [locX + _thickness , locY + (height - _thickness) / 2d],
-            [locX + _thickness / 2d, locY + height / 2d],
-            [locX, locY + (height - _thickness) / 2d],
-            [locX, locY + _thickness]
+            [locX + _thickness / 2d, middle],
+            [locX + _thickness, middle - halfThick],
+            [locX + width - _thickness, middle - halfThick],
+            [locX + width - _thickness / 2d, middle],
+            [locX + width - _thickness, middle + halfThick],
+            [locX + _thickness, middle + halfThick]
         ];
         dc.fillPolygon(points);
     }
 
-    function drawG(dc as Gfx.Dc) {
+    function drawVerticalTop(dc as Gfx.Dc, middle as Lang.Double) {
+        var halfThick = _thickness / 2d;
+        var top = locY + halfThick;
+        var bottom = top - halfThick + height / 2d;
         var points = [
-            [locX + _thickness / 2d, locY + height / 2d],
-            [locX + _thickness, locY + (height - _thickness) / 2d],
-            [locX + width - _thickness, locY + (height - _thickness) / 2d],
-            [locX + width - _thickness / 2d, locY + height / 2d],
-            [locX + width - _thickness, locY + (height + _thickness) / 2d],
-            [locX + _thickness, locY + (height + _thickness) / 2d]
+            [middle, top],
+            [middle + halfThick, top + halfThick],
+            [middle + halfThick, bottom - halfThick],
+            [middle, bottom],
+            [middle - halfThick, bottom - halfThick],
+            [middle - halfThick, top + halfThick]
+        ];
+        dc.fillPolygon(points);
+    }
+
+    function drawVerticalBottom(dc as Gfx.Dc, middle as Lang.Double) {
+        var halfThick = _thickness / 2d;
+        var top = locY + height / 2d;
+        var bottom = locY + height - halfThick;
+        var points = [
+            [middle, top],
+            [middle + halfThick, top + halfThick],
+            [middle + halfThick, bottom - halfThick],
+            [middle, bottom],
+            [middle - halfThick, bottom - halfThick],
+            [middle - halfThick, top + halfThick]
         ];
         dc.fillPolygon(points);
     }
