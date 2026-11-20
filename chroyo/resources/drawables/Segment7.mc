@@ -10,6 +10,7 @@ class Segment7 extends Ui.Drawable {
     hidden var _backColor as Gfx.ColorType;
     hidden var _number as Lang.Integer;
     hidden var _thickness as Lang.Double;
+    hidden var _gap as Lang.Double;
 
     function initialize(params) {
         Drawable.initialize(params);
@@ -18,6 +19,7 @@ class Segment7 extends Ui.Drawable {
         _backColor = params.get(:backColor);
         _number = 8;
         _thickness = params.get(:thickness).toDouble();
+        _gap = params.get(:gap).toDouble();
     }
     
     public function setNumber(number as Lang.Integer) as Void {
@@ -139,21 +141,25 @@ class Segment7 extends Ui.Drawable {
 
     function drawHorizontal(dc as Gfx.Dc, middle as Lang.Double) {
         var halfThick = _thickness / 2d;
+        var halfGap = _gap / 2d;
+        var left = locX + halfThick + halfGap;
+        var right = locX - halfThick + width - halfGap;
         var points = [
-            [locX + _thickness / 2d, middle],
-            [locX + _thickness, middle - halfThick],
-            [locX + width - _thickness, middle - halfThick],
-            [locX + width - _thickness / 2d, middle],
-            [locX + width - _thickness, middle + halfThick],
-            [locX + _thickness, middle + halfThick]
+            [left, middle],
+            [left + halfThick, middle - halfThick],
+            [right - halfThick, middle - halfThick],
+            [right, middle],
+            [right - halfThick, middle + halfThick],
+            [left + halfThick, middle + halfThick]
         ];
         dc.fillPolygon(points);
     }
 
     function drawVerticalTop(dc as Gfx.Dc, middle as Lang.Double) {
         var halfThick = _thickness / 2d;
-        var top = locY + halfThick;
-        var bottom = top - halfThick + height / 2d;
+        var halfGap = _gap / 2d;
+        var top = locY + halfThick + halfGap;
+        var bottom = locY - halfGap + height / 2d;
         var points = [
             [middle, top],
             [middle + halfThick, top + halfThick],
@@ -167,8 +173,9 @@ class Segment7 extends Ui.Drawable {
 
     function drawVerticalBottom(dc as Gfx.Dc, middle as Lang.Double) {
         var halfThick = _thickness / 2d;
-        var top = locY + height / 2d;
-        var bottom = locY + height - halfThick;
+        var halfGap = _gap / 2d;
+        var top = locY + height / 2d + halfGap;
+        var bottom = locY + height - halfThick - halfGap;
         var points = [
             [middle, top],
             [middle + halfThick, top + halfThick],

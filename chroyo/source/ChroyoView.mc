@@ -62,6 +62,11 @@ class ChroyoView extends WatchUi.WatchFace {
         var heartWidget = View.findDrawableById("HeartRate") as HeartRateWidget;
         heartWidget.draw(dc);
 
+        var fixedSegment = View.findDrawableById("FixedSegment") as Segment7;
+        fixedSegment.setLocation(150, 120);
+        fixedSegment.setSize(40, 80);
+        fixedSegment.draw(dc);
+
         var secSegment = View.findDrawableById("SecondsSegment") as Segment7;
         secSegment.setLocation(100, 120);
         secSegment.setSize(40, 80);
