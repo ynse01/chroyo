@@ -21,31 +21,84 @@ class Segment7 extends Ui.Drawable {
     }
     
     public function setNumber(number as Lang.Integer) as Void {
-        _number = number;
+        _number = number % 10;
     }
 
     function draw(dc as Gfx.Dc) as Void {
         dc.setColor(_foreColor, _backColor);
-        if (isOnA()) {
-            drawA(dc);
-        }
-        if (isOnB()) {
-            drawB(dc);
-        }
-        if (isOnC()) {
-            drawC(dc);
-        }
-        if (isOnD()) {
-            drawD(dc);
-        }
-        if (isOnE()) {
-            drawE(dc);
-        }
-        if (isOnF()) {
-            drawF(dc);
-        }
-        if (isOnG()) {
-            drawG(dc);
+        switch(_number) {
+            case 0:
+                drawA(dc);
+                drawB(dc);
+                drawC(dc);
+                drawD(dc);
+                drawE(dc);
+                drawF(dc);
+                break;
+            case 1:
+                drawB(dc);
+                drawC(dc);
+                break;
+            case 2:
+                drawA(dc);
+                drawB(dc);
+                drawD(dc);
+                drawE(dc);
+                drawG(dc);
+                break;
+            case 3:
+                drawA(dc);
+                drawB(dc);
+                drawC(dc);
+                drawD(dc);
+                drawG(dc);
+                break;
+            case 4:
+                drawB(dc);
+                drawC(dc);
+                drawF(dc);
+                drawG(dc);
+                break;
+            case 5:
+                drawA(dc);
+                drawC(dc);
+                drawD(dc);
+                drawF(dc);
+                drawG(dc);
+                break;
+            case 6:
+                drawA(dc);
+                drawC(dc);
+                drawD(dc);
+                drawE(dc);
+                drawF(dc);
+                drawG(dc);
+                break;
+            case 7:
+                drawA(dc);
+                drawB(dc);
+                drawC(dc);
+                break;
+            case 8:
+                drawA(dc);
+                drawB(dc);
+                drawC(dc);
+                drawD(dc);
+                drawE(dc);
+                drawF(dc);
+                drawG(dc);
+                break;
+            case 9:
+                drawA(dc);
+                drawB(dc);
+                drawC(dc);
+                drawD(dc);
+                drawF(dc);
+                drawG(dc);
+                break;
+            default:
+                // silently draw nothing
+                break;
         }
     }
 
@@ -131,80 +184,5 @@ class Segment7 extends Ui.Drawable {
             [locX + _thickness, locY + (height + _thickness) / 2d]
         ];
         dc.fillPolygon(points);
-    }
-
-    function isOnA() as Lang.Boolean {
-        switch (_number) {
-            case 1:
-            case 4:
-                return false;
-            default:
-                return true;
-        }
-    }
-
-    function isOnB() as Lang.Boolean {
-        switch (_number) {
-            case 5:
-            case 6:
-                return false;
-            default:
-                return true;
-        }
-    }
-
-    function isOnC() as Lang.Boolean {
-        switch (_number) {
-            case 2:
-                return false;
-            default:
-                return true;
-        }
-    }
-
-    function isOnD() as Lang.Boolean {
-        switch (_number) {
-            case 1:
-            case 4:
-            case 7:
-                return false;
-            default:
-                return true;
-        }
-    }
-
-    function isOnE() as Lang.Boolean {
-        switch (_number) {
-            case 2:
-            case 6:
-            case 8:
-            case 0:
-                return true;
-            default:
-                return false;
-        }
-    }
-
-    function isOnF() as Lang.Boolean {
-        switch (_number) {
-            case 1:
-            case 2:
-            case 3:
-            case 7:
-                return false;
-            default:
-                return true;
-        }
-    }
-
-    function isOnG() as Lang.Boolean {
-        switch (_number) {
-            case 1:
-            case 7:
-            case 0:
-                return false;
-            default:
-                return true;
-        }
     }
 }
